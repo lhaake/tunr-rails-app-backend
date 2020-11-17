@@ -195,3 +195,73 @@ Processing by SongsController#index as */*
 Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.5ms | Allocations: 1449)
 
 
+Started GET "/songs/" for ::1 at 2020-11-16 20:27:14 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as */*
+  [1m[36mSong Load (2.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 81ms (Views: 18.7ms | ActiveRecord: 41.2ms | Allocations: 7831)
+
+
+Started POST "/songs/" for ::1 at 2020-11-16 20:27:26 -0500
+Processing by SongsController#create as */*
+  Parameters: {"title"=>"Test ", "artist"=>"Test ", "time"=>"3:00", "favorite"=>false, "song"=>{"title"=>"Test ", "artist"=>"Test ", "time"=>"3:00", "favorite"=>false}}
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (27.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Test "], ["artist", "Test "], ["time", "3:00"], ["favorite", false], ["created_at", "2020-11-17 01:27:26.812890"], ["updated_at", "2020-11-17 01:27:26.812890"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 52ms (Views: 0.6ms | ActiveRecord: 40.7ms | Allocations: 2100)
+
+
+Started GET "/songs/" for ::1 at 2020-11-16 20:27:26 -0500
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms | Allocations: 1555)
+
+
+Started PUT "/songs/10" for ::1 at 2020-11-16 20:27:41 -0500
+Processing by SongsController#update as */*
+  Parameters: {"id"=>"10", "title"=>"Test 2", "artist"=>"Test  2", "time"=>"3:06", "favorite"=>false, "created_at"=>"2020-11-17T01:27:26.812Z", "updated_at"=>"2020-11-17T01:27:26.812Z", "song"=>{"id"=>"10", "title"=>"Test 2", "artist"=>"Test  2", "time"=>"3:06", "favorite"=>false, "created_at"=>"2020-11-17T01:27:26.812Z", "updated_at"=>"2020-11-17T01:27:26.812Z"}}
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+[31mUnpermitted parameters: :id, :created_at, :updated_at[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:29:in `update'
+  [1m[36mSong Update (1.3ms)[0m  [1m[33mUPDATE "songs" SET "title" = $1, "artist" = $2, "time" = $3, "updated_at" = $4 WHERE "songs"."id" = $5[0m  [["title", "Test 2"], ["artist", "Test  2"], ["time", "3:06"], ["updated_at", "2020-11-17 01:27:41.872080"], ["id", 10]]
+  ↳ app/controllers/songs_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (25.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:29:in `update'
+Completed 200 OK in 47ms (Views: 0.5ms | ActiveRecord: 28.9ms | Allocations: 2874)
+
+
+Started GET "/songs/" for ::1 at 2020-11-16 20:27:41 -0500
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.7ms | Allocations: 1553)
+
+
+Started DELETE "/songs/10" for ::1 at 2020-11-16 20:27:45 -0500
+Processing by SongsController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 2.1ms | Allocations: 1773)
+
+
+Started GET "/songs/" for ::1 at 2020-11-16 20:27:45 -0500
+Processing by SongsController#index as */*
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 1450)
+
+
