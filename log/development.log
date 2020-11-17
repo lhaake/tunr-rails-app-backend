@@ -31,3 +31,167 @@ Migrating to CreateSongs (20201117005935)
   ↳ config/boot.rb:4:in `load'
   [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ config/boot.rb:4:in `load'
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mSong Create (27.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dreams"], ["artist", "Fleetwood Mac"], ["time", "4:17"], ["favorite", false], ["created_at", "2020-11-17 01:07:41.050574"], ["updated_at", "2020-11-17 01:07:41.050574"]]
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Everywhere"], ["artist", "Fleetwood Mac"], ["time", "3:46"], ["favorite", false], ["created_at", "2020-11-17 01:07:41.090913"], ["updated_at", "2020-11-17 01:07:41.090913"]]
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gypsy"], ["artist", "Fleetwood Mac"], ["time", "4:24"], ["favorite", false], ["created_at", "2020-11-17 01:07:41.101646"], ["updated_at", "2020-11-17 01:07:41.101646"]]
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Landslide"], ["artist", "Fleetwood Mac"], ["time", "3:19"], ["favorite", false], ["created_at", "2020-11-17 01:07:41.136048"], ["updated_at", "2020-11-17 01:07:41.136048"]]
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Seven Wonders"], ["artist", "Fleetwood Mac"], ["time", "3:42"], ["favorite", false], ["created_at", "2020-11-17 01:07:41.149230"], ["updated_at", "2020-11-17 01:07:41.149230"]]
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ config/boot.rb:4:in `load'
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-11-16 20:09:43 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.7.0/gems/railties-6.1.0.rc1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.7.0/gems/railties-6.1.0.rc1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 19.5ms | Allocations: 346)
+Completed 200 OK in 51ms (Views: 31.6ms | ActiveRecord: 0.0ms | Allocations: 2705)
+
+
+Started GET "/songs" for ::1 at 2020-11-16 20:09:46 -0500
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 53ms (Views: 12.5ms | ActiveRecord: 36.1ms | Allocations: 5318)
+
+
+Started POST "/songs" for ::1 at 2020-11-16 20:10:16 -0500
+Processing by SongsController#create as */*
+  Parameters: {"title"=>"Fallingwater", "artist"=>"Maggie Rogers", "time"=>"4:31", "favorite"=>false, "song"=>{"title"=>"Fallingwater", "artist"=>"Maggie Rogers", "time"=>"4:31", "favorite"=>false}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (2.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fallingwater"], ["artist", "Maggie Rogers"], ["time", "4:31"], ["favorite", false], ["created_at", "2020-11-17 01:10:16.540501"], ["updated_at", "2020-11-17 01:10:16.540501"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 1.4ms | ActiveRecord: 3.8ms | Allocations: 2101)
+
+
+Started POST "/songs" for ::1 at 2020-11-16 20:10:29 -0500
+Processing by SongsController#create as */*
+  Parameters: {"title"=>"Alaska", "artist"=>"Maggie Rogers", "time"=>"3:50", "favorite"=>false, "song"=>{"title"=>"Alaska", "artist"=>"Maggie Rogers", "time"=>"3:50", "favorite"=>false}}
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (5.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Alaska"], ["artist", "Maggie Rogers"], ["time", "3:50"], ["favorite", false], ["created_at", "2020-11-17 01:10:29.533453"], ["updated_at", "2020-11-17 01:10:29.533453"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 23ms (Views: 0.9ms | ActiveRecord: 9.2ms | Allocations: 1834)
+
+
+Started POST "/songs" for ::1 at 2020-11-16 20:11:01 -0500
+Processing by SongsController#create as */*
+  Parameters: {"title"=>"Best to You", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "song"=>{"title"=>"Best to You", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (26.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Best to You"], ["artist", "Blood Orange"], ["time", "3:45"], ["favorite", false], ["created_at", "2020-11-17 01:11:01.178565"], ["updated_at", "2020-11-17 01:11:01.178565"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 63ms (Views: 3.2ms | ActiveRecord: 27.8ms | Allocations: 1853)
+
+
+Started GET "/songs" for ::1 at 2020-11-16 20:11:04 -0500
+Processing by SongsController#index as */*
+  Parameters: {"title"=>"Best to You", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "song"=>{"title"=>"Best to You", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (1.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 1.6ms | Allocations: 1470)
+
+
+Started POST "/songs" for ::1 at 2020-11-16 20:11:16 -0500
+Processing by SongsController#create as */*
+  Parameters: {"title"=>"Best to You II", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "song"=>{"title"=>"Best to You II", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "favorite", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Best to You II"], ["artist", "Blood Orange"], ["time", "3:45"], ["favorite", false], ["created_at", "2020-11-17 01:11:16.077157"], ["updated_at", "2020-11-17 01:11:16.077157"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 21ms (Views: 1.0ms | ActiveRecord: 4.7ms | Allocations: 1831)
+
+
+Started GET "/songs/9" for ::1 at 2020-11-16 20:11:26 -0500
+Processing by SongsController#show as */*
+  Parameters: {"title"=>"Best to You II", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "id"=>"9", "song"=>{"title"=>"Best to You II", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (3.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 200 OK in 124ms (Views: 2.3ms | ActiveRecord: 6.1ms | Allocations: 1152)
+
+
+Started PUT "/songs/9" for ::1 at 2020-11-16 20:11:39 -0500
+Processing by SongsController#update as */*
+  Parameters: {"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "id"=>"9", "song"=>{"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:29:in `update'
+  [1m[36mSong Update (30.0ms)[0m  [1m[33mUPDATE "songs" SET "title" = $1, "updated_at" = $2 WHERE "songs"."id" = $3[0m  [["title", "Best to You 4"], ["updated_at", "2020-11-17 01:11:39.195103"], ["id", 9]]
+  ↳ app/controllers/songs_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:29:in `update'
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 33.2ms | Allocations: 2253)
+
+
+Started GET "/songs/1" for ::1 at 2020-11-16 20:11:49 -0500
+Processing by SongsController#show as */*
+  Parameters: {"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "id"=>"1", "song"=>{"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 610)
+
+
+Started GET "/songs" for ::1 at 2020-11-16 20:11:53 -0500
+Processing by SongsController#index as */*
+  Parameters: {"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "song"=>{"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.6ms | Allocations: 1553)
+
+
+Started DELETE "/songs/9" for ::1 at 2020-11-16 20:12:03 -0500
+Processing by SongsController#destroy as */*
+  Parameters: {"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "id"=>"9", "song"=>{"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+  [1m[36mSong Destroy (1.0ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+Completed 204 No Content in 30ms (ActiveRecord: 3.7ms | Allocations: 1752)
+
+
+Started GET "/songs" for ::1 at 2020-11-16 20:12:08 -0500
+Processing by SongsController#index as */*
+  Parameters: {"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false, "song"=>{"title"=>"Best to You 4", "artist"=>"Blood Orange", "time"=>"3:45", "favorite"=>false}}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.5ms | Allocations: 1449)
+
+

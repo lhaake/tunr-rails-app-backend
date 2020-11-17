@@ -5,12 +5,12 @@ class SongsController < ApplicationController
   def index
     @songs = Song.all
 
-    render json: @songs
+    render json: @songs, status: 200
   end
 
   # GET /songs/1
   def show
-    render json: @song
+    render json: @song, statuts: 200
   end
 
   # POST /songs
@@ -27,7 +27,7 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1
   def update
     if @song.update(song_params)
-      render json: @song
+      render json: @song, status: 200
     else
       render json: @song.errors, status: :unprocessable_entity
     end
