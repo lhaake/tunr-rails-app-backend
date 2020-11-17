@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  artist: MyString
+  time: MyString
+  favorite: false
+
+two:
+  title: MyString
+  artist: MyString
+  time: MyString
+  favorite: false
